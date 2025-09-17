@@ -73,7 +73,7 @@ This project requires R (version 4.0 or higher) and the following packages:
 1. Clone this repository:
 
 ```
-git clone https://github.com/your-user/Otolith-landmark-prediction.git
+git clone https://github.com/RobinBecard/Otolith-landmark-prediction-analysis.git
 ```
 
 2. Open R and install the required dependencies:
