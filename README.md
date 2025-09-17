@@ -1,55 +1,57 @@
-# Analyse d'Objets 3D - Otolithes
+# 3D objects analysis  - Otoliths
 
-Ce projet permet l'analyse d'objets 3D, spécifiquement des otolithes (structures calcifiées de l'oreille interne des poissons), à travers deux applications complémentaires : une pour l'extraction de points caractéristiques (landmarks) et une pour la visualisation interactive des modèles 3D.
+This project focuses on the automation and analysis of 3D objects. Otoliths, small calcified structures found in the inner ear of fish, are commonly used in fisheries science to estimate age, growth, and population structure. By leveraging machine learning and 3D geometry analysis, this tool aims to identify key morphological landmarks on otolith meshes (.ply files), enabling faster and more consistent analysis for ecological and biological research.
 
-## Fonctionnalités principales
+Two applications were developed as part of this project: one for landmark extraction, and another for visualization and analysis of the 3D otolith objects.
 
-### Application d'extraction de points caractéristiques (Extracteur_App)
+## Main features
 
-- Chargement de fichiers PLY (ASCII ou binaire avec conversion automatique)
-- Traitement par lots de plusieurs fichiers
-- Extraction automatique de points caractéristiques via un modèle de prédiction
-- Projection des points sur la surface du maillage 3D
-- Calcul du volume de l'objet
-- Export des données dans un format texte standardisé
+### Landmark Extraction Application (Extract_App)
 
-### Application de visualisation (View_App)
+- Loading of PLY files (ASCII or binary with automatic conversion)
+- Batch processing of multiple files
+- Automatic extraction of characteristics points using a prediction model
+- Projection of landmarks onto the surface of the 3D mesh
+- Volume calculation of the object
+- Export of data in a standardized text format
 
-- Visualisation interactive des modèles 3D
-- Affichage des faces interne et externe des otolithes
-- Visualisation des points caractéristiques
-- Configuration des paramètres visuels (couleur, opacité)
-- Analyse des descripteurs (volume, dimensions)
+### Visualization Application (View_App)
 
-## Structure du projet
+- Interactive visualization of 3D models
+- Display of internal and external surfaces of otoliths
+- Visualization of characteristic points
+- Configuration of visual parameters (color, opacity)
+- Analysis of descriptors (volume, dimensions=
+
+## Project structure
 
 ```
 Projet_Tech_Objets_3D/
 │
-├── R/                          # Scripts R principaux
-│   ├── Extracteur_App.R        # Application d'extraction de landmarks
-│   ├── View_App.R              # Application de visualisation 3D
-│   ├── Landmark_correction.R   # Fonctions de correction des landmarks
-│   ├── Landmarks_prediction_APP.R # Prédiction de points caractéristiques
-│   ├── utils.R                 # Fonctions utilitaires générales
-│   ├── utils_extracteur.R      # Fonctions spécifiques à l'extracteur
-│   └── utils_ViewApp.R         # Fonctions spécifiques à la visualisation
+├── R/                          # Main R scripts
+│   ├── Extractor_App.R        # Landmarks extraction application
+│   ├── View_App.R              # 3D visualization application
+│   ├── Landmark_correction.R   # Landmarks adjustment functions
+│   ├── Landmarks_prediction_APP.R # Landmarks prediction
+│   ├── utils.R                 # General Utility Functions
+│   ├── utils_extracteur.R      # Extractor-Specific Functions
+│   └── utils_ViewApp.R         # Visualization-Specific Functions
 │
-├── Setup_Extracteur.R          # Configuration des librairies pour l'extracteur
-├── Setup_ViewApp.R             # Configuration des librairies pour la visualisation
+├── Setup_Extractor.R          # Library configuration for the extraction 
+├── Setup_ViewApp.R             # Library configuration for the visualization 
 │
-├── Pytorch/                    # Modèles PyTorch pour la prédiction
-│   ├── Landmarks_NN_4.pt       # Modèle entraîné pour la prédiction de landmarks
-│   └── Model_Optimizer_4.pt    # État de l'optimiseur du modèle
+├── Pytorch/                    # PyTorch models for landmark prediction
+│   ├── Landmarks_NN_4.pt       # Trained model for landmark prediction
+│   └── Model_Optimizer_4.pt    # Optimizer state for the model
 │
-└── Data/                       # Dossier pour les données (à créer)
-    ├── PLY_files_ASCII/        # Fichiers PLY au format ASCII
-    └── points.txt              # Fichier d'export des landmarks
+└── Data/                       # Data folder
+    ├── PLY_files_ASCII/        # PLY files in ASCII format
+    └── points.txt              # Exported landmark data
 ```
 
-## Prérequis
+## Prerequisites
 
-Ce projet nécessite R (version 4.0 ou supérieure) et les packages suivants :
+This project requires R (version 4.0 or higher) and the following packages:
 
 - geomorph
 - shiny
@@ -68,61 +70,61 @@ Ce projet nécessite R (version 4.0 ou supérieure) et les packages suivants :
 
 ## Installation
 
-1. Clonez ce dépôt :
+1. Clone this repository:
 
 ```
 git clone https://github.com/votre-utilisateur/Projet_Tech_Objets_3D.git
 ```
 
-2. Lancez R et installez les dépendances requises :
+2. Open R and install the required dependencies:
 
 ```r
-# Pour l'extracteur
+# For the extractor
 source("Setup_Extracteur.R")
 
-# Pour la visionneuse
+# For the viewer
 source("Setup_ViewApp.R")
 ```
 
-## Utilisation
+## Usage
 
-### Démarrage des applications
+### Launching the Applications
 
-1. Pour l'extracteur de points caractéristiques :
+1. To start the landmark extraction application:
 
 ```r
 source("Extracteur_App.R")
 ```
 
-2. Pour la visionneuse 3D :
+2. To start the 3D viewer application:
 
 ```r
 source("View_App.R")
 ```
 
-### Application d'extraction
+### Landmark Extraction Application
 
-1. Sélectionnez un ou plusieurs fichiers PLY ou un dossier contenant des fichiers PLY
-2. Les fichiers seront traités automatiquement et les points caractéristiques extraits
-3. Consultez le tableau pour voir les points extraits pour chaque fichier
-4. Exportez les landmarks dans un fichier texte
+1. Select one or more PLY files, or a folder containing PLY files.
+2. The files will be processed automatically and characteristic points will be extracted.
+3. View the table to see the extracted landmarks for each file.
+4. Export the landmarks to a standardized text file.
 
-### Application de visualisation
+### Visualization Application
 
-1. Sélectionnez un fichier PLY à visualiser
-2. Utilisez les différentes vues (Isométrique, Dessus, Face) pour explorer le modèle
-3. Ajustez les paramètres visuels (couleur, opacité)
-4. Consultez l'onglet "Descripteurs" pour les informations détaillées
+1. Select a PLY file to visualize.
+2. Use different views (Isometric, Top, Front) to explore the model.
+3. Adjust visual parameters (color, opacity).
+4. Check the "Descriptors" tab for detailed information.
 
-## Format des données
+## Data Format
 
-### Format PLY
+### PLY Format
 
-L'application accepte les fichiers au format PLY (Polygon File Format), également connu sous le nom de Stanford Triangle Format. Les fichiers PLY peuvent être en format ASCII ou binaire (conversion automatique).
+The application supports PLY files (Polygon File Format), also known as Stanford Triangle Format. Files can be in ASCII or binary format (automatic conversion is handled).
 
-### Format de sortie des landmarks
+### Landmark Output Format
 
-Le fichier d'export des landmarks suit un format spécifique :
+The exported landmark file follows a specific format:
 
 ```
 LM3=6 VOLUME=123.456
@@ -132,12 +134,12 @@ LM3=6 VOLUME=123.456
 ID=nom_du_fichier
 ```
 
-## Remarques techniques
+## Technical Notes
 
-- Le modèle de prédiction utilise PyTorch via le package torch pour R
-- La projection des landmarks sur la surface s'effectue par calcul géométrique des triangles les plus proches
-- Le volume est calculé à partir du maillage fermé de l'objet 3D
+- The prediction model uses PyTorch via the torch package for R.
+- Landmark projection onto the surface is performed using geometric calculations of the nearest triangles.
+- Volume is computed from the closed mesh of the 3D object.
 
-## Auteurs
+## Auteur
 
-Adrien, Rémi et Robin
+Robin BECARD
