@@ -80,7 +80,7 @@ git clone https://github.com/RobinBecard/Otolith-landmark-prediction-analysis.gi
 
 ```r
 # For the extractor
-source("Setup_Extracteur.R")
+source("Setup_Extractor.R")
 
 # For the viewer
 source("Setup_ViewApp.R")
@@ -93,7 +93,7 @@ source("Setup_ViewApp.R")
 1. To start the landmark extraction application:
 
 ```r
-source("Extracteur_App.R")
+source("Extractor_App.R")
 ```
 
 2. To start the 3D viewer application:
@@ -140,6 +140,6 @@ ID=nom_du_fichier
 - Landmark projection onto the surface is performed using geometric calculations of the nearest triangles.
 - Volume is computed from the closed mesh of the 3D object.
 
-## Auteur
+## Author
 
 Robin BECARD
