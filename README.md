@@ -26,7 +26,7 @@ Two applications were developed as part of this project: one for landmark extrac
 ## Project structure
 
 ```
-Projet_Tech_Objets_3D/
+Otolith-landmark-prediction-analysis/
 │
 ├── R/                          # Main R scripts
 │   ├── Extractor_App.R        # Landmarks extraction application
