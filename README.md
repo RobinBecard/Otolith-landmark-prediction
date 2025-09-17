@@ -34,7 +34,7 @@ Projet_Tech_Objets_3D/
 │   ├── Landmark_correction.R   # Landmarks adjustment functions
 │   ├── Landmarks_prediction_APP.R # Landmarks prediction
 │   ├── utils.R                 # General Utility Functions
-│   ├── utils_extracteur.R      # Extractor-Specific Functions
+│   ├── utils_extractor.R      # Extractor-Specific Functions
 │   └── utils_ViewApp.R         # Visualization-Specific Functions
 │
 ├── Setup_Extractor.R          # Library configuration for the extraction 
@@ -73,7 +73,7 @@ This project requires R (version 4.0 or higher) and the following packages:
 1. Clone this repository:
 
 ```
-git clone https://github.com/votre-utilisateur/Projet_Tech_Objets_3D.git
+git clone https://github.com/your-user/Otolith-landmark-prediction.git
 ```
 
 2. Open R and install the required dependencies:
